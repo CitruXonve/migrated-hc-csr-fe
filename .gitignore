@@ -41,9 +41,8 @@ log/
 
 .pnpm-store/
 
-edenx.config.local.ts
-edenx.config.local.js
-edenx.config.local.mjs
+# Modern.js
+modern.config.local.*
 
 doc_build/
 
