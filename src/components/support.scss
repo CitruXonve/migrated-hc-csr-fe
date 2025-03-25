@@ -1,0 +1,466 @@
+@import '~@/stylesheet/fonts/FontMixin';
+@import '~@/stylesheet/respond-to';
+@import '~@/stylesheet/mixin';
+$help-center-h1-min: 24px;
+$help-center-h1-max: 56px;
+$help-center-h3-min: 18px;
+$help-center-h3-max: 24px;
+.is-rtl {
+  .help-center-v2 {
+    direction: rtl;
+    section {
+      &.jumbotron {
+        .jumbotron-content {
+          .home-search,
+          .home-search-mobile {
+            .search-container {
+              .input-container {
+                margin-right: responsive-value($screen-xs, $screen-lg, 24px, 32px);
+                margin-left: unset;
+              }
+            }
+          }
+        }
+      }
+      &.topics {
+        margin: 48px auto 122px;
+        .section-cards {
+          margin-right: -16px;
+          margin-left: 16px;
+        }
+      }
+    }
+  }
+}
+.help-center-v2 {
+  @include TikTokFont-Regular();
+  h1 {
+    font-weight: 700;
+    line-height: 1em;
+    letter-spacing: 0em;
+    @include TikTokFont-Bold();
+  }
+  h3 {
+    font-weight: 700;
+    line-height: 1em;
+    letter-spacing: 0em;
+    @include responsive-font-size($screen-xs, $screen-lg, $help-center-h3-min, $help-center-h3-max);
+  }
+  section {
+    &.jumbotron {
+      position: relative;
+      min-height: 216px;
+      .jumbotron-bg,
+      .jumbotron-bg-mobile {
+        width: 100%;
+        filter: drop-shadow(0px 2px 12px rgba(0, 0, 0, 0.12));
+      }
+      .jumbotron-content {
+        position: absolute;
+        top: responsive-value($screen-xs, $screen-lg, 44px, 81px);
+        left: 50%;
+        transform: translate(-50%, 0);
+        text-align: center;
+        width: 100%;
+        h3 {
+          color: rgba(22, 24, 35, 0.5);
+        }
+        h1 {
+          @include responsive-font-size($screen-xs, $screen-lg, $help-center-h1-min, $help-center-h1-max);
+          margin: responsive-value($screen-xs, $screen-lg, 8px, 16px) 0 0;
+        }
+        .home-search,
+        .home-search-mobile {
+          margin: responsive-value($screen-xs, $screen-lg, 25px, 62px) 0 0;
+          .search-container {
+            height: responsive-value($screen-xs, $screen-lg, 40px, 60px);
+            @include responsive-font-size($screen-xs, $screen-lg, 16px, 24px);
+            .input-container {
+              margin-left: responsive-value($screen-xs, $screen-lg, 24px, 32px);
+              input {
+                @include TikTokFont-Regular();
+              }
+            }
+            .search-button-addon {
+              .search-btn {
+                width: responsive-value($screen-xs, $screen-lg, 36px, 56px);
+              }
+            }
+          }
+        }
+      }
+    }
+    &.popular-articles,
+    &.topics,
+    &.psa {
+      padding: 0 responsive-value($screen-xs, $screen-lg, 24px, 150px) 0
+        responsive-value($screen-xs, $screen-lg, 24px, 136px);
+      max-width: 1200px;
+    }
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      h1 {
+        text-align: center;
+        @include responsive-font-size($screen-xs, $screen-lg, 33px, $help-center-h1-max);
+      }
+    }
+    &.psa {
+      margin: 64px auto 0;
+      .psa-inner {
+        padding: 32px;
+        box-shadow: 2px 4px 20px rgba(34, 90, 89, 0.2);
+        border-radius: 8px;
+        .psa-head {
+          display: flex;
+          align-items: flex-start;
+          .psa-title {
+            margin-left: 24px;
+            display: flex;
+            flex-direction: column;
+            h4 {
+              margin: 0;
+              font-size: 18px;
+              line-height: 25px;
+              color: rgba(22, 24, 35, 0.34);
+            }
+            h2 {
+              margin-top: 8px;
+              font-size: 32px;
+              line-height: 38px;
+            }
+          }
+        }
+        .psa-body {
+          margin-top: 8px;
+          margin-left: 88px;
+          display: flex;
+          flex-direction: row;
+          align-items: flex-end;
+          justify-content: space-between;
+          p {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            color: rgba(22, 24, 35, 0.75);
+            font-size: 18px;
+            line-height: 24px;
+          }
+          .article-link {
+            background: #fe2c55;
+            border-radius: 4px;
+            margin-left: 32px;
+            padding: 12px 16px;
+            text-align: center;
+            a {
+              min-width: 140px;
+              color: white;
+              font-size: 16px;
+              line-height: 22px;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+    &.popular-articles {
+      margin: 64px auto 0;
+      .section-cards {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .card {
+          padding: 32px;
+          width: calc(100% / 2 - 16px);
+          box-sizing: border-box;
+          margin-bottom: 32px;
+          a {
+            &:active {
+              opacity: 20%;
+            }
+          }
+          h3 {
+            font-size: 24px;
+            margin-top: 16px;
+            overflow-wrap: break-word;
+            .article-link {
+              color: inherit;
+              &:visited {
+                color: unset;
+              }
+            }
+          }
+        }
+      }
+    }
+    &.topics {
+      margin: 48px auto 122px;
+      a {
+        color: inherit;
+        &:visited {
+          color: unset;
+        }
+      }
+      .section-cards {
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-left: -16px;
+        margin-right: 16px;
+        .card {
+          padding: 40px 32px;
+          margin: 32px 16px 0;
+          width: calc(100% / 2 - 16px);
+          box-sizing: border-box;
+          a {
+            &:active {
+              opacity: 20%;
+            }
+          }
+          .topic-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            h2 {
+              font-size: 33px;
+              max-width: calc(100% - 96px);
+              overflow-wrap: break-word;
+            }
+          }
+          .category-list {
+            margin: 24px 0 0;
+            padding: 0;
+            list-style: none;
+            font-size: 16px;
+            color: rgba(22, 24, 35, 0.5);
+            li {
+              margin-top: 20px;
+              &:first-child {
+                margin-top: 0;
+              }
+              a {
+                overflow-wrap: break-word;
+                &:hover {
+                  border-bottom: 1px solid rgba(138, 139, 145, 1);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .section-cards {
+      margin-top: 32px;
+
+      .card {
+        box-shadow: 2px 4px 20px rgba(34, 90, 89, 0.2);
+        border-radius: 8px;
+      }
+    }
+  }
+}
+
+@include respond-to(lg) {
+  .help-center-v2 {
+    section {
+      &.jumbotron {
+        .jumbotron-content {
+          top: 81px;
+          h1 {
+            margin: 16px 0 0;
+          }
+          .home-search,
+          .home-search-mobile {
+            margin: 62px 0 0;
+            .search-container {
+              height: 60px;
+              .input-container {
+                margin-left: 32px;
+              }
+              .search-button-addon {
+                .search-btn {
+                  width: 56px;
+                }
+              }
+            }
+          }
+        }
+      }
+      &.popular-articles,
+      &.topics,
+      &.psa {
+        padding: 0 150px 0 136px;
+      }
+    }
+  }
+}
+@include respond-to(xs) {
+  .help-center-v2 {
+    section {
+      &.jumbotron {
+        .jumbotron-bg {
+          display: none;
+        }
+        .jumbotron-content {
+          top: 44px;
+          h1 {
+            margin: 8px 0 0;
+          }
+          .home-search,
+          .home-search-mobile {
+            margin: 25px 0 0;
+            .search-container {
+              height: 40px;
+              .input-container {
+                margin-left: 24px;
+              }
+              .search-button-addon {
+                .search-btn {
+                  width: 36px;
+                }
+              }
+            }
+          }
+          .home-search {
+            display: none;
+          }
+        }
+      }
+
+      &.popular-articles,
+      &.topics {
+        padding: 0 24px 0 24px;
+        .section-head {
+          justify-content: center;
+          font-size: 33px;
+        }
+        .section-cards {
+          margin-top: 24px;
+          .card {
+            width: calc(100%);
+            margin-bottom: 16px;
+          }
+        }
+      }
+      &.psa {
+        padding: 0 24px 0 24px;
+        margin-top: 32px;
+        .psa-inner {
+          padding: 24px;
+          .psa-head {
+            .psa-icon {
+              width: 32px;
+              height: 32px;
+            }
+            .psa-title {
+              margin-left: 8px;
+              display: flex;
+              flex-direction: column;
+              h4 {
+                margin: 0;
+                font-size: 12px;
+                line-height: 15px;
+              }
+              h2 {
+                margin-top: 4px;
+                font-size: 24px;
+                line-height: 28px;
+              }
+            }
+          }
+          .psa-body {
+            margin-top: 16px;
+            margin-left: 0;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            p {
+              -webkit-line-clamp: 4;
+              font-size: 16px;
+              line-height: 22px;
+            }
+            .article-link {
+              margin-left: 0;
+              margin-top: 24px;
+              width: 100%;
+              box-sizing: border-box;
+            }
+          }
+        }
+      }
+      &.popular-articles {
+        .section-head {
+          .icon-head {
+            display: none;
+          }
+        }
+        .section-cards {
+          .card {
+            padding: 24px;
+            .help-center-breadsrumb {
+              a {
+                font-size: 14px;
+              }
+            }
+            h3 {
+              .article-link {
+                @include TikTokFont-Bold();
+                font-size: 18px;
+              }
+            }
+          }
+        }
+      }
+      &.topics {
+        margin: 47px 0 81px;
+        .section-cards {
+          max-height: unset !important;
+          margin: 24px 0 0 !important;
+          .card {
+            margin: 0 0 16px 0;
+            padding: 32px 24px;
+            .topic-card-header {
+              img {
+                width: 32px;
+                height: 32px;
+              }
+              h2 {
+                font-size: 24px;
+                max-width: calc(100% - 72px);
+              }
+            }
+            .category-list {
+              font-size: 14px;
+              li {
+                margin-top: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include respond-bigger-than-phone() {
+  .help-center-v2 {
+    section {
+      &.jumbotron {
+        .jumbotron-bg-mobile {
+          display: none;
+        }
+        .jumbotron-content {
+          .home-search-mobile {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
