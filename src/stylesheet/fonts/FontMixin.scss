@@ -1,0 +1,155 @@
+@mixin TikTokFont-Regular {
+  font-family: 'TikTokFont-Regular', PingFangSC, sans-serif;
+  font-weight: 400;
+
+  :global(html[lang^='vi']) & {
+    font-family: 'IBM Plex Sans', 'TikTokFont-Regular', PingFangSC, sans-serif;
+  }
+}
+
+@mixin TikTokFont-Semibold {
+  font-family: 'TikTokFont-Semibold', PingFangSC, sans-serif;
+  font-weight: 600;
+
+  :global(html[lang^='vi']) & {
+    font-family: 'IBM Plex Sans', 'TikTokFont-Semibold', PingFangSC, sans-serif;
+  }
+}
+
+@mixin TikTokFont-Bold {
+  font-family: 'TikTokFont-Bold', PingFangSC, sans-serif;
+  font-weight: 900;
+
+  :global(html[lang^='vi']) & {
+    font-family: 'IBM Plex Sans', 'TikTokFont-Bold', PingFangSC, sans-serif;
+  }
+}
+
+@mixin TikTokDisplayFont-Regular {
+  font-family: 'TikTokDisplayFont-Regular', PingFangSC, sans-serif;
+  font-weight: 400;
+
+  :global(html[lang^='vi']) & {
+    font-family: 'IBM Plex Sans', 'TikTokDisplayFont-Regular', PingFangSC, sans-serif;
+  }
+}
+
+@mixin TikTokDisplayFont-Semibold {
+  font-family: 'TikTokDisplayFont-Semibold', PingFangSC, sans-serif;
+  font-weight: 500;
+
+  :global(html[lang^='vi']) & {
+    font-family: 'IBM Plex Sans', 'TikTokDisplayFont-Semibold', PingFangSC, sans-serif;
+  }
+}
+
+@mixin TikTokDisplayFont-Bold {
+  font-family: 'TikTokDisplayFont-Bold', PingFangSC, sans-serif;
+  font-weight: 700;
+
+  :global(html[lang^='vi']) & {
+    font-family: 'IBM Plex Sans', 'TikTokDisplayFont-Bold', PingFangSC, sans-serif;
+  }
+}
+
+@mixin TikTokFont-H1 {
+  @include TikTokDisplayFont-Bold();
+  font-size: 80px;
+  line-height: 1;
+}
+
+@mixin TikTokFont-H2 {
+  @include TikTokDisplayFont-Bold();
+  font-size: 72px;
+  line-height: 1;
+}
+
+@mixin TikTokFont-H3 {
+  @include TikTokDisplayFont-Bold();
+  font-size: 57px;
+  line-height: 1;
+}
+
+@mixin TikTokFont-H4 {
+  @include TikTokDisplayFont-Bold();
+  font-size: 48px;
+  line-height: 1;
+}
+
+@mixin TikTokFont-H5 {
+  @include TikTokDisplayFont-Bold();
+  font-size: 33px;
+  line-height: 1;
+}
+
+@mixin TikTokFont-H6 {
+  @include TikTokFont-Regular();
+  font-size: 24px;
+  line-height: 1;
+}
+
+@mixin TikTokFont-Subtitle {
+  @include TikTokFont-Semibold();
+  font-size: 24px;
+  line-height: 32px;
+}
+
+@mixin TikTokFont-Nav {
+  @include TikTokFont-Semibold();
+  font-size: 14px;
+  line-height: 28px;
+}
+
+@mixin TikTokFont-Button {
+  @include TikTokFont-Bold();
+  font-size: 15px;
+  line-height: 18px;
+}
+
+@mixin TikTokFont-Mobile-H1 {
+  @include TikTokFont-Semibold();
+  font-size: 22px;
+  line-height: 26px;
+}
+
+@mixin TikTokFont-Mobile-H2 {
+  @include TikTokFont-Semibold();
+  font-size: 20px;
+  line-height: 24px;
+}
+
+@mixin TikTokFont-Biggest {
+  @include TikTokFont-Regular();
+  font-size: 24px;
+  line-height: 32px;
+}
+
+@mixin TikTokFont-title {
+  @include TikTokFont-Semibold();
+  font-size: 20px;
+  line-height: 24px;
+}
+
+@mixin TikTokFont-Big {
+  @include TikTokFont-Regular();
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@mixin TikTokFont-Mobile {
+  @include TikTokFont-Regular();
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@mixin TikTokFont-Body {
+  @include TikTokFont-Regular();
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@mixin TikTokFont-Newsroom-Body {
+  @include TikTokFont-Regular();
+  font-size: 16px;
+  line-height: 20px;
+}
