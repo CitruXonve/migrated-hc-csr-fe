@@ -1,5 +1,6 @@
 import { Helmet } from '@modern-js/runtime/head';
 import './index.css';
+import BreadCrumb from '@/components/Breadcrumb';
 
 const Index = () => (
   <div className="container-box">
@@ -22,6 +23,23 @@ const Index = () => (
       </div>
       <p className="description">
         Get started by editing <code className="code">src/routes/page.tsx</code>
+        <BreadCrumb
+          lang={'en'}
+          linkArray={[
+            {
+              tier: 1,
+              key: 'projectKey',
+              i18nKey: 'projecti18nKey',
+              link: '#',
+            },
+            {
+              tier: 2,
+              key: 'categoryKey',
+              i18nKey: 'categoryi18nKey',
+              link: '#',
+            },
+          ]}
+        />
       </p>
       <div className="grid">
         <a

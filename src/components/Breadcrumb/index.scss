@@ -1,0 +1,112 @@
+@import '~@/stylesheet/respond-to';
+.is-rtl {
+  .help-center-breadcrumb-container {
+    &.text-oveflowed {
+      &::after {
+        background: linear-gradient(-90deg, #ffffff 0%, rgba(255, 255, 255, 0) 72.5%);
+        content: '';
+        display: block;
+        height: inherit;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 8.33333%;
+        z-index: 1;
+        opacity: 1;
+        transition: opacity ease 0.3s;
+      }
+      &.scrolled-to-root {
+        &::after {
+          opacity: 0;
+        }
+      }
+      &::before {
+        display: none;
+      }
+    }
+    .breadcrumb-nav {
+      .help-center-breadcrumb {
+        &.text-oveflowed {
+          direction: ltr;
+          span {
+            direction: rtl;
+          }
+        }
+        span {
+          &:first-child {
+            margin-right: 0;
+          }
+        }
+        img {
+          transform: scaleX(-1);
+          margin-left: 11px;
+        }
+      }
+    }
+  }
+}
+.help-center-breadcrumb-container {
+  position: relative;
+  &.text-oveflowed {
+    &::before {
+      background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0) 72.5%);
+      content: '';
+      display: block;
+      height: inherit;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 8.33333%;
+      z-index: 1;
+      opacity: 1;
+      transition: opacity ease 0.3s;
+    }
+    &.scrolled-to-root {
+      &::before {
+        opacity: 0;
+      }
+    }
+  }
+  .breadcrumb-nav {
+    overflow-y: hidden;
+    height: inherit;
+    .help-center-breadcrumb {
+      display: flex;
+      align-items: baseline;
+      flex-flow: row wrap;
+      flex-wrap: nowrap;
+      overflow-x: scroll;
+      position: relative;
+      padding-bottom: 10px;
+
+      &.text-oveflowed {
+        direction: rtl;
+      }
+      img {
+        margin-right: 11px;
+      }
+      span {
+        margin-right: 11px;
+        &:last-child {
+          margin-right: 0;
+        }
+        a {
+          color: rgba(22, 24, 35, 0.34);
+          font-size: 16px;
+          white-space: nowrap;
+          &:visited {
+            color: unset;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include respond-to(xs) {
+  .help-center-breadcrumb-container {
+    &.text-oveflowed {
+      font-size: 14px;
+    }
+  }
+}
