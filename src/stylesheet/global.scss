@@ -1,0 +1,88 @@
+/* @styled-jsx=global */
+@import './common-font.scss';
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  -webkit-tap-highlight-color: transparent;
+  font-family: 'TikTokFont-Regular', PingFangSC, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+
+  // IE
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -ms-scrollbar-3dlight-color: #fff;
+  scrollbar-3dlight-color: #fff;
+  scrollbar-shadow-color: #fff;
+  scrollbar-face-color: rgba(22, 24, 35, 0.34);
+  scrollbar-darkshadow-color: #fff;
+
+  html[lang^='vi'] & {
+    font-family: 'IBM Plex Sans', 'TikTokFont-Regular', PingFangSC, sans-serif;
+  }
+
+  &.safari {
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.desktop-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+strong {
+  font-weight: normal;
+}
+
+.page-with-header {
+  padding-top: 70px;
+}
+
+.main-body {
+  width: 100%;
+  background: #ffffff;
+}
+
+.banner-video-item {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 100px;
+  height: 100px;
+}
+
+html[pc='yes'] * {
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  /*定义滚动条轨道
+    内阴影+圆角*/
+  ::-webkit-scrollbar-track {
+    border-radius: 0px;
+    background-color: #fff;
+  }
+  /*定义滑块
+    内阴影+圆角*/
+  ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(22, 24, 35, 0.34);
+  }
+}

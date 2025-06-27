@@ -1,0 +1,51 @@
+@import '~@/stylesheet/respond-to.scss';
+@import '~@/stylesheet/fonts/FontMixin.scss';
+
+.language-selection {
+  @include TikTokFont-Regular();
+  box-sizing: border-box;
+  width: 172px;
+  height: 36px;
+  border: 1px solid #8a8b91;
+  border-radius: 2px;
+  font-size: 14px;
+  line-height: 36px;
+  padding: 0 16px;
+  cursor: pointer;
+  position: relative;
+  text-align: left;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    display: block;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    margin-top: -6px;
+    pointer-events: none;
+  }
+
+  .language-selection-form {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+}
+
+.language-selection::after {
+  background: url('./arrow.svg') center no-repeat;
+  background-size: contain;
+}
+
+@include respond-pad {
+  .language-selection {
+    text-align: left;
+  }
+}

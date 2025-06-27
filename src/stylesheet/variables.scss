@@ -1,0 +1,112 @@
+@import './respond-to.scss';
+
+$red: #fe2c55;
+$red-hover: #ff7792;
+
+$blue: #25f4ee;
+$blue-hover: #a3efed;
+
+$white: #ffffff;
+$white-hover: #f1f1f1;
+
+$black: #000000;
+$black-hover: #333333;
+
+$disabled: #dcdcde;
+
+$newsroom-community: #fe2c55;
+$newsroom-product: #8b62ff;
+$newsroom-safety: #161823;
+$newsroom-news: #36d1cc;
+
+$header-height: 70px;
+
+$app-menu-height: 49px;
+
+$switch-off: rgba(46, 50, 56, 0.05);
+
+@mixin tt-button($type) {
+  outline: none;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  cursor: pointer;
+
+  @if $type == 'primary' {
+    background-color: $red;
+    color: $white;
+
+    @include respond-bigger-than-pad {
+      &:hover {
+        background-color: $red-hover;
+      }
+
+      &:active {
+        border-color: rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+}
+
+@mixin rtl($setDirection: true, $isSameLevel: false) {
+  @if $isSameLevel == false {
+    :global(.is-rtl) & {
+      @if $setDirection == true {
+        direction: rtl;
+      }
+      @content;
+    }
+  }
+  @if $isSameLevel == true {
+    &.is-rtl {
+      @if $setDirection == true {
+        direction: rtl;
+      }
+      @content;
+    }
+  }
+}
+
+@mixin clearfix {
+  &::after {
+    content: '';
+    height: 0;
+    display: block;
+    clear: both;
+  }
+}
+
+@mixin Dropshadow-Card($overflow: auto, $hover: false) {
+  overflow: $overflow;
+  box-shadow: 2px 4px 20px rgba(34, 90, 89, 0.2);
+  border-radius: 8px;
+
+  @if $hover {
+    transition: box-shadow 200ms ease;
+
+    &:hover {
+      box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+    }
+  }
+}
+
+@mixin Card($overflow: auto) {
+  overflow: $overflow;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+@mixin phone-line($color, $top: false) {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  transform: scaleY(0.5);
+
+  @if $top {
+    border-top: 1px solid $color;
+    top: 0;
+  } @else {
+    bottom: 0;
+    border-bottom: 1px solid $color;
+  }
+}

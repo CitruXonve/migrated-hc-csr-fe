@@ -1,0 +1,21 @@
+// 默认字体
+// header和footer用到的字体
+@import './fonts/TikTokFontRegular.scss';
+@import './fonts/TikTokFontSemibold.scss';
+@import './fonts/TikTokFontBold.scss';
+@import './fonts/TikTokDisplayFontRegular.scss';
+@import './fonts/TikTokDisplayFontSemibold.scss';
+@import './fonts/TikTokDisplayFontBold.scss';
+
+html:lang(vi) {
+  body {
+    font-family: initial;
+  }
+}
+body {
+  font-family: 'TikTokFont-Regular', PingFangSC, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
